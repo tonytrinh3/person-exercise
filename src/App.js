@@ -15,7 +15,7 @@ class App extends Component {
     }
     
 
-/*
+
     nameChangedHandler = (event, id) => {
         // good to not mutate the state directly  
         const personIndex = this.state.persons.findIndex(p => {
@@ -34,7 +34,7 @@ class App extends Component {
         this.setState ({persons: persons});
     }
     
-*/
+
 
     deletePersonHandler = (personIndex) => {
         //const persons2 = this.state.persons.slice();
@@ -113,4 +113,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Radium(App);
