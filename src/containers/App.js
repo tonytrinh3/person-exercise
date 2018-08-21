@@ -8,11 +8,26 @@ class App extends Component {
     constructor (props){
         super(props);
         console.log('[App.js] Inside Constructor', props);
+        this.state = {
+            persons: [
+                {id: "awaf", name: "Max", age: 28},
+                {id: "af", name: "Manu", age: 29},
+                {id: "awf", name: 'Stephanie', age: 26}
+            ],
+            otherState: 'some other value',
+            showPersons: false
+        };
+    }
 
+    componentWillMount(){
+        console.log('[App.js] Inside componentWillMount()');
+    }
+
+    componentDidMount(){
+        console.log('[App.js] Inside componentDidMount()');
     }
     
-    
-    
+   /* 
     state = {
         persons: [
             {id: "awaf", name: "Max", age: 28},
@@ -21,7 +36,9 @@ class App extends Component {
         ],
         otherState: 'some other value',
         showPersons: false
-    }
+    };
+    */
+ 
     
 
 
@@ -58,6 +75,7 @@ class App extends Component {
     }
    
     render(){
+        console.log('[App.js] Inside render()');
 
         let persons = null;
 
@@ -68,8 +86,6 @@ class App extends Component {
                     changed = {this.nameChangedHandler}/>
                
         }
-
-
 
     return (
     // wrap that export with radium component
