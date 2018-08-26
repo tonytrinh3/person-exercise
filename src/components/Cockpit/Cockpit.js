@@ -1,5 +1,6 @@
 import React from 'react';
-import classes from "./Cockpit.css"
+import classes from "./Cockpit.css";
+import Aux from '../../hoc/Aux';
 
 //function component bc it doesn't need to maintain its own state 
 
@@ -19,15 +20,15 @@ const Cockpit = (props) => {
     }
     
     return (
-        //scoping of our classes in the cockpit component
-        <div className = {classes.Cockpit}>
-            <h1>{props.appTitle}</h1>
-            <p className = {assignedClasses.join(' ')}> This is really working!</p>
-            <button 
-                className = {btnClass}
-                onClick = {props.clicked}>Toggle Persons</button>
-        </div>
+        <Aux>
 
+                <h1>{props.appTitle}</h1>
+                <p className = {assignedClasses.join(' ')}> This is really working!</p>
+                <button 
+                    className = {btnClass}
+                    onClick = {props.clicked}>Toggle Persons</button>
+            
+        </Aux>
     )
 }
 
