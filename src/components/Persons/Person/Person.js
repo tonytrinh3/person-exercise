@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import classes from './Person.css';
 import withClass from '../../../hoc/WithClass';
-import Aux from '../../../hoc/Aux';
+import Aux from '../../../hoc/Auxilary';
 //changed from a const stateless component to a stateful component 
 //why change from props to this.props when going from const to class? 
 class Person extends Component {
