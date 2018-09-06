@@ -5,6 +5,9 @@ import Cockpit from '../components/Cockpit/Cockpit';
 import withClass from '../hoc/WithClass';
 import Aux from '../hoc/Auxilary'
 
+//context api from react 16.3 allow you pass data without having a chain of props, is good for global setting
+//props is a good to reuse components 
+export const AuthContext = React.createContext(false);
 
 class App extends PureComponent {
     constructor (props){
@@ -18,7 +21,8 @@ class App extends PureComponent {
             ],
             otherState: 'some other value',
             showPersons: false,
-            toggleClicked: 0
+            toggleClicked: 0,
+            authenticated: false
         };
     }
 
@@ -97,6 +101,11 @@ class App extends PureComponent {
             }
         });
     }
+
+    loginHandler = () => {
+        this.setState({authenticated: true});
+
+    }
    
     render(){
         console.log('[App.js] Inside render()');
@@ -107,8 +116,10 @@ class App extends PureComponent {
             persons = <Persons 
                     persons = {this.state.persons}
                     clicked = {this.deletePersonHandler}
-                    changed = {this.nameChangedHandler}/>
-               
+                    changed = {this.nameChangedHandler}
+                    /*isAuthenticated = {this.state.authenticated}*/
+                    />
+        
         }
 
     return (
@@ -120,9 +131,12 @@ class App extends PureComponent {
             appTitle = {this.props.title}
             showPersons = {this.state.showPersons}
             persons = {this.state.persons}
+            login = {this.loginHandler}
             clicked = {this.togglePersonsHandler}
             />
+             <AuthContext.Provider value = {this.state.authenticated}>
             {persons}
+             </AuthContext.Provider>
         </Aux>
       
             

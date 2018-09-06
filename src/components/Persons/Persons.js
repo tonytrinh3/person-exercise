@@ -53,6 +53,7 @@ class Persons extends Component{
             position = {index}
             age = {person.age}
             ref={this.lastPersonRef}
+            /*Authenticated = {this.props.isAuthenticated}*/
             key = {person.id} 
             changed = {(event) => this.props.changed(event,person.id)}/>
             
