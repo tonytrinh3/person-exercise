@@ -5,15 +5,14 @@ import Cockpit from '../components/Cockpit/Cockpit';
 import withClass from '../hoc/WithClass';
 import Aux from '../hoc/Auxilary'
 
-<<<<<<< HEAD
+
 //context api from react 16.3 allow you pass data without having a chain of props, is good for global setting
 //props is a good to reuse components 
 export const AuthContext = React.createContext(false);
-=======
-//allow for available for other components
-export const AuthContext = React.createContext(false);
 
->>>>>>> 79d30659d8de9a369debba8e44012aaab5124015
+//allow for available for other components
+
+
 
 class App extends PureComponent {
     constructor (props){
@@ -28,11 +27,7 @@ class App extends PureComponent {
             otherState: 'some other value',
             showPersons: false,
             toggleClicked: 0,
-<<<<<<< HEAD
-            authenticated: false
-=======
             authenticated: false 
->>>>>>> 79d30659d8de9a369debba8e44012aaab5124015
         };
     }
 
@@ -112,10 +107,9 @@ class App extends PureComponent {
         });
     }
 
-<<<<<<< HEAD
-=======
+
     //function
->>>>>>> 79d30659d8de9a369debba8e44012aaab5124015
+
     loginHandler = () => {
         this.setState({authenticated: true});
 
@@ -131,14 +125,11 @@ class App extends PureComponent {
                     persons = {this.state.persons}
                     clicked = {this.deletePersonHandler}
                     changed = {this.nameChangedHandler}
-<<<<<<< HEAD
-                    /*isAuthenticated = {this.state.authenticated}*/
                     />
         
-=======
-                    />;
+
+                
                
->>>>>>> 79d30659d8de9a369debba8e44012aaab5124015
         }
 
     return (
@@ -153,15 +144,11 @@ class App extends PureComponent {
             login = {this.loginHandler}
             clicked = {this.togglePersonsHandler}
             />
-<<<<<<< HEAD
-             <AuthContext.Provider value = {this.state.authenticated}>
-            {persons}
-             </AuthContext.Provider>
-=======
+
             <AuthContext.Provider value ={this.state.authenticated}>
             {persons}
             </AuthContext.Provider>
->>>>>>> 79d30659d8de9a369debba8e44012aaab5124015
+
         </Aux>
       
             
