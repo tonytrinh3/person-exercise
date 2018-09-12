@@ -44,6 +44,17 @@ class App extends PureComponent {
     componentWillUpdate(nextProps, nextState){
         console.log('[UPDATE App.js] Inside componentWillUpdate', nextProps, nextState);
     }
+    //lifecycle hook
+    //static bc static method , a method not attached to a single instance 
+    //good for bringing state and props in sync
+    static getDerivedStateFromProps(nextProps, prevState) {
+        console.log('[UPDATE App.js] Inside getDerivedStateFromProps', nextProps, prevState);
+        return prevState;
+    }
+
+    getSnapshotBeforeUpdate(){
+        console.log('[UPDATE App.js] Inside getDerivedStateFromProps');
+    }
 
     componentDidUpdate (){
         console.log('[App.js] Inside componentDidUpdate()');
