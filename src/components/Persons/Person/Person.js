@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import classes from './Person.css';
 import withClass from '../../../hoc/WithClass';
 import Aux from '../../../hoc/Auxilary';
+
 import { AuthContext } from '../../../containers/App';
+
 
 
 //changed from a const stateless component to a stateful component 
@@ -33,15 +35,18 @@ class Person extends Component {
     }
     //ref is all to focus - only use this for focus or media
 
-
+            //this.props.authenticated ? <p>I'm authenticated!</p> : null
     
     render() {
         console.log('[Person.js] Inside render()')
         return (
-            <Aux classes = {classes.Person}>
+
+            <Aux classes = {classes.Person} >
                 <AuthContext.Consumer>
-                {auth => auth ? <p>I'm authenticated!</p> : null}
+                    {auth => auth ? <p>I'm authenticated!</p> : null}
                 </AuthContext.Consumer>
+
+
                 <p onClick = {this.props.click}> I'm {this.props.name} and I am {this.props.age} years old!</p>
                 <p>{this.props.children}</p>
                 <input 
@@ -61,7 +66,7 @@ class Person extends Component {
 
  
 Person.propTypes = {
-    click: PropTypes.func ,
+    click: PropTypes.func,
     name: PropTypes.string,
     age: PropTypes.number,
     changed: PropTypes.func
